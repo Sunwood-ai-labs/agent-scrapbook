@@ -31,8 +31,11 @@
   position: relative;
   display: grid;
   gap: 0;
-  width: min(100%, calc(100vw - 48px));
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin: 2rem 0;
+  overflow: hidden;
 }
 
 .thread,
@@ -47,6 +50,8 @@
 .thread-report {
   position: relative;
   display: block;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .thread-report + .thread-report {
@@ -87,12 +92,14 @@
 
 .thread-card {
   width: 100%;
+  min-width: 0;
   max-width: 100%;
   border: 1px solid var(--scrap-card-border);
   border-radius: 10px;
   background: var(--scrap-card);
   padding: 1.1rem;
   box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
 }
 
 .thread-title {
@@ -143,6 +150,8 @@
 
 .thread-body {
   margin-top: 1rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .thread-body h4 {
@@ -155,6 +164,12 @@
 .thread-body ol {
   margin: 0.45rem 0 0.8rem 1.2rem;
   padding: 0;
+  min-width: 0;
+}
+
+.thread-body li {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .thread-body li + li {
@@ -166,26 +181,36 @@
   border-left: 3px solid var(--scrap-accent);
   padding: 0.2rem 0 0.2rem 0.85rem;
   color: var(--scrap-muted);
+  overflow-wrap: anywhere;
 }
 
 .thread-body pre {
-  overflow-x: auto;
+  max-width: 100%;
+  overflow-x: hidden;
   border: 1px solid var(--scrap-card-border);
   border-radius: 8px;
   padding: 0.85rem;
   background: var(--scrap-code);
   font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .thread-body code {
   border-radius: 5px;
   padding: 0.1rem 0.25rem;
   background: var(--scrap-code);
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .thread-body pre code {
   padding: 0;
   background: transparent;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .thread-image {
@@ -214,16 +239,30 @@
 }
 
 .thread-branch {
-  overflow-x: auto;
+  max-width: 100%;
+  overflow-x: hidden;
   border: 1px solid var(--scrap-card-border);
   border-radius: 8px;
   padding: 1rem;
   background: var(--vp-c-bg-soft);
 }
 
+.thread-branch pre {
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.thread-branch code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 @media (max-width: 640px) {
   .thread {
-    width: min(100%, calc(100vw - 48px));
     margin-top: 1.5rem;
   }
 
@@ -240,6 +279,13 @@
 
   .thread-card {
     padding: 0.9rem;
+  }
+
+  .thread-body pre,
+  .thread-branch pre {
+    padding: 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.55;
   }
 
   .thread-title h3 {
