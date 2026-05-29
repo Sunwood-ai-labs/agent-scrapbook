@@ -34,6 +34,7 @@ export default defineConfig({
           { text: '0104 Example Expansion', link: '/reports/0104-this-thread-example-expansion' },
           { text: '0105 Screenshot Review', link: '/reports/0105-this-thread-screenshot-review' },
           { text: '0106 Wide Markdown Cards', link: '/reports/0106-this-thread-wide-markdown-cards' },
+          { text: '0107 Responsive Overflow Fix', link: '/reports/0107-this-thread-responsive-overflow-fix' },
           { text: '0001 Concept', link: '/reports/0001-concept' },
           { text: '0002 Scaffold', link: '/reports/0002-scaffold' },
           { text: '0003 Publish Gate', link: '/reports/0003-publish-gate' }

@@ -183,6 +183,45 @@ mobile screenshot looks readable</code></pre>
   </section>
 </article>
 
+<article class="thread-report">
+  <section class="thread-card">
+    <div class="thread-head">
+      <div class="thread-dot">07</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0107-this-thread-responsive-overflow-fix.md">0107 Responsive Overflow Fix</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: 0106</span>
+        <span class="thread-chip">agent: user-and-codex</span>
+      </div>
+    </div>
+    <div class="thread-body">
+      <h4>ユーザーからの指摘</h4>
+      <blockquote>カードとかがレスポンシブ対応してる？ 下のテキスト系はできてるように見えるけどどう？？</blockquote>
+      <h4>確認した問題</h4>
+      <ul>
+        <li>通常テキストは折り返せていた。</li>
+        <li>カード、コードブロック、Branch View は長い <code>pre/code</code> に引っ張られ、横スクロールが出る状態だった。</li>
+        <li>つまり「本文はレスポンシブ、カード内の固定幅系は未対応」という状態だった。</li>
+      </ul>
+      <h4>修正</h4>
+      <ul>
+        <li><code>.thread</code>, <code>.thread-card</code>, <code>.thread-body</code> に <code>min-width: 0</code> と <code>max-width: 100%</code> を追加。</li>
+        <li><code>pre</code> と <code>code</code> を <code>pre-wrap</code> / <code>overflow-wrap: anywhere</code> で折り返す。</li>
+        <li><code>.thread-branch</code> も同じルールにして、Branch View が画面外へ出ないようにした。</li>
+      </ul>
+      <h4>検証結果</h4>
+      <pre><code>widths: 360, 390, 430
+scrollWidth === viewport
+cards: 6
+codeBlocks: 3
+images: 1
+overflow failures: 0</code></pre>
+    </div>
+  </section>
+</article>
+
 </div>
 
 ## Branch View
@@ -196,6 +235,7 @@ mobile screenshot looks readable</code></pre>
       └─ 0104 example-expansion
          └─ 0105 screenshot-review
             └─ 0106 wide-markdown-cards
+               └─ 0107 responsive-overflow-fix
 ```
 
 </div>
@@ -208,3 +248,4 @@ mobile screenshot looks readable</code></pre>
 - 今回の追記では、会話内容をそのまま転載せず、公開向けに要約した。
 - スレッドらしさは、HTTP確認だけではなくスクリーンショットで確認する。
 - カード内では Markdown 相当の見出し、リスト、引用、コード、画像を扱えるようにする。
+- レスポンシブ確認では、本文だけでなくカード、コードブロック、画像、Branch View の横溢れも検証する。
