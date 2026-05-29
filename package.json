@@ -19,6 +19,7 @@
   "author": "Sunwood-ai-labs",
   "license": "MIT",
   "devDependencies": {
+    "playwright": "^1.60.0",
     "vitepress": "^1.6.4"
   }
 }

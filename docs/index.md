@@ -11,6 +11,7 @@ Zenn のスクラップのように、エージェント作業の応答レポー
   - [0102 Repo Build](./reports/0102-this-thread-repo-build.md)
   - [0103 Publish Proof](./reports/0103-this-thread-publish-proof.md)
   - [0104 Example Expansion](./reports/0104-this-thread-example-expansion.md)
+  - [0105 Screenshot Review](./reports/0105-this-thread-screenshot-review.md)
 - [Demo Build Thread](./tasks/demo-build-thread.md)
   - [0001 Concept](./reports/0001-concept.md)
   - [0002 Scaffold](./reports/0002-scaffold.md)

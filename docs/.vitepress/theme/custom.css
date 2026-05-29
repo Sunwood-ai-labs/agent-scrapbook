@@ -1,0 +1,158 @@
+:root {
+  --scrap-line: #6b7280;
+  --scrap-accent: #0f766e;
+  --scrap-accent-soft: rgba(15, 118, 110, 0.12);
+  --scrap-card: rgba(255, 255, 255, 0.72);
+  --scrap-card-border: rgba(15, 23, 42, 0.14);
+  --scrap-muted: #64748b;
+}
+
+.dark {
+  --scrap-line: #64748b;
+  --scrap-accent: #2dd4bf;
+  --scrap-accent-soft: rgba(45, 212, 191, 0.13);
+  --scrap-card: rgba(15, 23, 42, 0.64);
+  --scrap-card-border: rgba(148, 163, 184, 0.24);
+  --scrap-muted: #94a3b8;
+}
+
+.thread-intro {
+  border-left: 4px solid var(--scrap-accent);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin: 1.5rem 0 2rem;
+  color: var(--vp-c-text-2);
+}
+
+.thread {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.thread::before {
+  content: "";
+  position: absolute;
+  top: 0.8rem;
+  bottom: 0.8rem;
+  left: 1rem;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--scrap-line) 1.5rem,
+    var(--scrap-line) calc(100% - 1.5rem),
+    transparent
+  );
+}
+
+.thread-report {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.thread-dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid var(--scrap-accent);
+  border-radius: 999px;
+  background: var(--vp-c-bg);
+  color: var(--scrap-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.thread-card {
+  border: 1px solid var(--scrap-card-border);
+  border-radius: 8px;
+  background: var(--scrap-card);
+  padding: 1rem;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+}
+
+.thread-card h3 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.thread-card h3 a {
+  text-decoration: none;
+}
+
+.thread-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0.75rem;
+}
+
+.thread-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.55rem;
+  border: 1px solid var(--scrap-card-border);
+  border-radius: 999px;
+  padding: 0 0.55rem;
+  background: var(--scrap-accent-soft);
+  color: var(--vp-c-text-1);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.thread-card p {
+  margin: 0.45rem 0 0;
+}
+
+.thread-note {
+  color: var(--scrap-muted);
+  font-size: 0.92rem;
+}
+
+.thread-branch {
+  overflow-x: auto;
+  border: 1px solid var(--scrap-card-border);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--vp-c-bg-soft);
+}
+
+@media (max-width: 640px) {
+  .thread {
+    gap: 1.1rem;
+    margin-top: 1.5rem;
+  }
+
+  .thread::before {
+    left: 0.78rem;
+  }
+
+  .thread-report {
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .thread-dot {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.68rem;
+  }
+
+  .thread-card {
+    padding: 0.9rem;
+  }
+
+  .thread-card h3 {
+    font-size: 1rem;
+  }
+}

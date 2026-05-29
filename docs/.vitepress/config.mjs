@@ -32,6 +32,7 @@ export default defineConfig({
           { text: '0102 Repo Build', link: '/reports/0102-this-thread-repo-build' },
           { text: '0103 Publish Proof', link: '/reports/0103-this-thread-publish-proof' },
           { text: '0104 Example Expansion', link: '/reports/0104-this-thread-example-expansion' },
+          { text: '0105 Screenshot Review', link: '/reports/0105-this-thread-screenshot-review' },
           { text: '0001 Concept', link: '/reports/0001-concept' },
           { text: '0002 Scaffold', link: '/reports/0002-scaffold' },
           { text: '0003 Publish Gate', link: '/reports/0003-publish-gate' }
