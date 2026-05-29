@@ -2,18 +2,19 @@
 
 Zenn のスクラップのように、エージェント作業の応答レポートを下へ下へ追記していく公開ログです。
 
-各レポートは独立した Markdown ファイルなので、VitePress 上では「スレッド全体」と「単体レポート」の両方から読めます。長いタスクでも、途中判断・検証・未解決リスクがツリー状に残ります。
+この実例では、スレッドページを正本にして各カードへ個別レポート相当の情報を載せます。二重管理を避けながら、途中判断・検証・未解決リスクをツリー状に残します。
 
 ## Task Tree
 
 - [This Thread: Agent Scrapbook Launch](./tasks/this-thread-agent-scrapbook.md)
-  - [0101 Idea Intake](./reports/0101-this-thread-idea-intake.md)
-  - [0102 Repo Build](./reports/0102-this-thread-repo-build.md)
-  - [0103 Publish Proof](./reports/0103-this-thread-publish-proof.md)
-  - [0104 Example Expansion](./reports/0104-this-thread-example-expansion.md)
-  - [0105 Screenshot Review](./reports/0105-this-thread-screenshot-review.md)
-  - [0106 Wide Markdown Cards](./reports/0106-this-thread-wide-markdown-cards.md)
-  - [0107 Responsive Overflow Fix](./reports/0107-this-thread-responsive-overflow-fix.md)
+  - 0101 Idea Intake
+  - 0102 Repo Build
+  - 0103 Publish Proof
+  - 0104 Example Expansion
+  - 0105 Screenshot Review
+  - 0106 Wide Markdown Cards
+  - 0107 Responsive Overflow Fix
+  - 0108 Single Source Thread
 - [Demo Build Thread](./tasks/demo-build-thread.md)
   - [0001 Concept](./reports/0001-concept.md)
   - [0002 Scaffold](./reports/0002-scaffold.md)

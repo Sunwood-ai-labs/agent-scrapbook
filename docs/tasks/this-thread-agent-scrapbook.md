@@ -8,7 +8,7 @@ title: "This Thread: Agent Scrapbook Launch"
 
 このページは、実際の会話を「スクラップ風のエージェント進捗ログ」に変換した例です。元スレッドでは、ユーザーが「Zenn のスクラップのように、各応答ごとのレポートを末尾へ追加し、タスクをツリー状に可視化したい」と提案しました。
 
-以下のように、各応答や作業フェーズを独立 Markdown レポートとして保存しつつ、このスレッドページの末尾に順番に追加します。
+以下のように、各応答や作業フェーズをこのスレッドページの末尾に順番に追加します。このページ自体を正本にして、個別レポートとの二重管理はしません。
 
 </div>
 
@@ -21,7 +21,7 @@ title: "This Thread: Agent Scrapbook Launch"
     <div class="thread-head">
       <div class="thread-dot">01</div>
       <div class="thread-title">
-        <h3><a href="../reports/0101-this-thread-idea-intake.md">0101 Idea Intake</a></h3>
+        <h3>0101 Idea Intake</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: accepted</span>
@@ -35,7 +35,7 @@ title: "This Thread: Agent Scrapbook Launch"
       <h4>判断</h4>
       <ul>
         <li>チャットログではなく、公開できる作業証跡として扱う。</li>
-        <li>タスク単位のスレッドと、応答単位の独立 Markdown を両立する。</li>
+        <li>当初は独立 Markdown も検討したが、後続の指摘によりスレッド正本へ寄せる。</li>
         <li>親子関係を <code>parent</code> で持てば、分岐した調査や修正もあとから追える。</li>
       </ul>
       <h4>次のアクション</h4>
@@ -50,7 +50,7 @@ docs/reports/NNNN-&lt;report&gt;.md</code></pre>
     <div class="thread-head">
       <div class="thread-dot">02</div>
       <div class="thread-title">
-        <h3><a href="../reports/0102-this-thread-repo-build.md">0102 Repo Build</a></h3>
+        <h3>0102 Repo Build</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: accepted</span>
@@ -79,7 +79,7 @@ gh repo create Sunwood-ai-labs/agent-scrapbook --public</code></pre>
     <div class="thread-head">
       <div class="thread-dot">03</div>
       <div class="thread-title">
-        <h3><a href="../reports/0103-this-thread-publish-proof.md">0103 Publish Proof</a></h3>
+        <h3>0103 Publish Proof</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: accepted</span>
@@ -106,7 +106,7 @@ gh repo create Sunwood-ai-labs/agent-scrapbook --public</code></pre>
     <div class="thread-head">
       <div class="thread-dot">04</div>
       <div class="thread-title">
-        <h3><a href="../reports/0104-this-thread-example-expansion.md">0104 Example Expansion</a></h3>
+        <h3>0104 Example Expansion</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: accepted</span>
@@ -132,7 +132,7 @@ gh repo create Sunwood-ai-labs/agent-scrapbook --public</code></pre>
     <div class="thread-head">
       <div class="thread-dot">05</div>
       <div class="thread-title">
-        <h3><a href="../reports/0105-this-thread-screenshot-review.md">0105 Screenshot Review</a></h3>
+        <h3>0105 Screenshot Review</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: superseded</span>
@@ -158,7 +158,7 @@ gh repo create Sunwood-ai-labs/agent-scrapbook --public</code></pre>
     <div class="thread-head">
       <div class="thread-dot">06</div>
       <div class="thread-title">
-        <h3><a href="../reports/0106-this-thread-wide-markdown-cards.md">0106 Wide Markdown Cards</a></h3>
+        <h3>0106 Wide Markdown Cards</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: fixing</span>
@@ -188,7 +188,7 @@ mobile screenshot looks readable</code></pre>
     <div class="thread-head">
       <div class="thread-dot">07</div>
       <div class="thread-title">
-        <h3><a href="../reports/0107-this-thread-responsive-overflow-fix.md">0107 Responsive Overflow Fix</a></h3>
+        <h3>0107 Responsive Overflow Fix</h3>
       </div>
       <div class="thread-meta">
         <span class="thread-chip">status: accepted</span>
@@ -222,6 +222,42 @@ overflow failures: 0</code></pre>
   </section>
 </article>
 
+<article class="thread-report">
+  <section class="thread-card">
+    <div class="thread-head">
+      <div class="thread-dot">08</div>
+      <div class="thread-title">
+        <h3>0108 Single Source Thread</h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: 0107</span>
+        <span class="thread-chip">agent: user-and-codex</span>
+      </div>
+    </div>
+    <div class="thread-body">
+      <h4>ユーザーからの指摘</h4>
+      <blockquote>スレッドと個別レポートって同じ？？ スレッドから個別レポートに飛ぶくらいなら、個別レポートレベルの情報をスレッドに載せて！ 二重管理になります！</blockquote>
+      <h4>判断</h4>
+      <ul>
+        <li>指摘どおり、この用途ではスレッドページが正本であるべき。</li>
+        <li>個別レポートへのリンクを前提にすると、スレッド側と個別ページ側で内容がずれる。</li>
+        <li>この実例スレッドでは <code>docs/reports/010x...</code> を廃止し、全情報をこのページ内カードに集約する。</li>
+      </ul>
+      <h4>修正</h4>
+      <ul>
+        <li>カード見出しから個別レポートリンクを削除。</li>
+        <li>トップページとサイドバーから <code>010x</code> 個別レポートリンクを削除。</li>
+        <li><code>0101</code> から <code>0108</code> までをスレッド内だけで読める構成に変更。</li>
+      </ul>
+      <h4>今後のルール</h4>
+      <pre><code>thread page = source of truth
+report card = full report body
+separate report page = optional archive only, not default</code></pre>
+    </div>
+  </section>
+</article>
+
 </div>
 
 ## Branch View
@@ -236,6 +272,7 @@ overflow failures: 0</code></pre>
          └─ 0105 screenshot-review
             └─ 0106 wide-markdown-cards
                └─ 0107 responsive-overflow-fix
+                  └─ 0108 single-source-thread
 ```
 
 </div>
@@ -249,3 +286,4 @@ overflow failures: 0</code></pre>
 - スレッドらしさは、HTTP確認だけではなくスクリーンショットで確認する。
 - カード内では Markdown 相当の見出し、リスト、引用、コード、画像を扱えるようにする。
 - レスポンシブ確認では、本文だけでなくカード、コードブロック、画像、Branch View の横溢れも検証する。
+- この実例では、スレッドページを正本にして個別レポートとの二重管理を避ける。

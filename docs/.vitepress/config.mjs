@@ -28,13 +28,6 @@ export default defineConfig({
       {
         text: 'Reports',
         items: [
-          { text: '0101 Idea Intake', link: '/reports/0101-this-thread-idea-intake' },
-          { text: '0102 Repo Build', link: '/reports/0102-this-thread-repo-build' },
-          { text: '0103 Publish Proof', link: '/reports/0103-this-thread-publish-proof' },
-          { text: '0104 Example Expansion', link: '/reports/0104-this-thread-example-expansion' },
-          { text: '0105 Screenshot Review', link: '/reports/0105-this-thread-screenshot-review' },
-          { text: '0106 Wide Markdown Cards', link: '/reports/0106-this-thread-wide-markdown-cards' },
-          { text: '0107 Responsive Overflow Fix', link: '/reports/0107-this-thread-responsive-overflow-fix' },
           { text: '0001 Concept', link: '/reports/0001-concept' },
           { text: '0002 Scaffold', link: '/reports/0002-scaffold' },
           { text: '0003 Publish Gate', link: '/reports/0003-publish-gate' }
