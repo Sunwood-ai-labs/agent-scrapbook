@@ -6,6 +6,11 @@ Zenn のスクラップのように、エージェント作業の応答レポー
 
 ## Task Tree
 
+- [This Thread: Agent Scrapbook Launch](./tasks/this-thread-agent-scrapbook.md)
+  - [0101 Idea Intake](./reports/0101-this-thread-idea-intake.md)
+  - [0102 Repo Build](./reports/0102-this-thread-repo-build.md)
+  - [0103 Publish Proof](./reports/0103-this-thread-publish-proof.md)
+  - [0104 Example Expansion](./reports/0104-this-thread-example-expansion.md)
 - [Demo Build Thread](./tasks/demo-build-thread.md)
   - [0001 Concept](./reports/0001-concept.md)
   - [0002 Scaffold](./reports/0002-scaffold.md)
