@@ -17,72 +17,169 @@ title: "This Thread: Agent Scrapbook Launch"
 <div class="thread">
 
 <article class="thread-report">
-  <div class="thread-dot">01</div>
   <section class="thread-card">
-    <h3><a href="../reports/0101-this-thread-idea-intake.md">0101 Idea Intake</a></h3>
-    <div class="thread-meta">
-      <span class="thread-chip">status: accepted</span>
-      <span class="thread-chip">parent: none</span>
-      <span class="thread-chip">agent: user-and-codex</span>
+    <div class="thread-head">
+      <div class="thread-dot">01</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0101-this-thread-idea-intake.md">0101 Idea Intake</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: none</span>
+        <span class="thread-chip">agent: user-and-codex</span>
+      </div>
     </div>
-    <p>ユーザーのアイデアを受け取り、スクラップ型ログが「進捗・判断・検証」を公開証跡にできると整理。</p>
-    <p class="thread-note">次の応答で、リポジトリとして成立する最小構成へ落とし込む。</p>
+    <div class="thread-body">
+      <h4>受け取った要件</h4>
+      <blockquote>Zenn のスクラップのように、各応答ごとのレポートをスレッド末尾に追加して、進捗を可視化したい。</blockquote>
+      <h4>判断</h4>
+      <ul>
+        <li>チャットログではなく、公開できる作業証跡として扱う。</li>
+        <li>タスク単位のスレッドと、応答単位の独立 Markdown を両立する。</li>
+        <li>親子関係を <code>parent</code> で持てば、分岐した調査や修正もあとから追える。</li>
+      </ul>
+      <h4>次のアクション</h4>
+      <pre><code>docs/tasks/&lt;task&gt;.md
+docs/reports/NNNN-&lt;report&gt;.md</code></pre>
+    </div>
   </section>
 </article>
 
 <article class="thread-report">
-  <div class="thread-dot">02</div>
   <section class="thread-card">
-    <h3><a href="../reports/0102-this-thread-repo-build.md">0102 Repo Build</a></h3>
-    <div class="thread-meta">
-      <span class="thread-chip">status: accepted</span>
-      <span class="thread-chip">parent: 0101</span>
-      <span class="thread-chip">agent: codex</span>
+    <div class="thread-head">
+      <div class="thread-dot">02</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0102-this-thread-repo-build.md">0102 Repo Build</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: 0101</span>
+        <span class="thread-chip">agent: codex</span>
+      </div>
     </div>
-    <p>VitePress サイト、レポート構造、サンプルページ、GitHub Pages workflow を実装。</p>
-    <p class="thread-note">Spark 上限と CC Orchestrator の未確定証跡も、このフェーズの実行ログとして残す。</p>
+    <div class="thread-body">
+      <h4>実装したもの</h4>
+      <ul>
+        <li>VitePress の公開ドキュメントサイト</li>
+        <li>タスクスレッドページと個別レポートページ</li>
+        <li>GitHub Pages 用 workflow</li>
+        <li>日本語 README と英語 README</li>
+      </ul>
+      <h4>運用上のメモ</h4>
+      <p>各応答は <code>docs/reports/</code> に残し、タスクページには要約とリンクを追記する。これにより、長い作業でも「何が終わり、何が未検証か」を後から見直せる。</p>
+      <pre><code>npm run docs:build
+gh repo create Sunwood-ai-labs/agent-scrapbook --public</code></pre>
+    </div>
   </section>
 </article>
 
 <article class="thread-report">
-  <div class="thread-dot">03</div>
   <section class="thread-card">
-    <h3><a href="../reports/0103-this-thread-publish-proof.md">0103 Publish Proof</a></h3>
-    <div class="thread-meta">
-      <span class="thread-chip">status: accepted</span>
-      <span class="thread-chip">parent: 0102</span>
-      <span class="thread-chip">agent: codex</span>
+    <div class="thread-head">
+      <div class="thread-dot">03</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0103-this-thread-publish-proof.md">0103 Publish Proof</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: 0102</span>
+        <span class="thread-chip">agent: codex</span>
+      </div>
     </div>
-    <p>GitHub リポジトリ作成、Pages 有効化、Actions 成功、HTTP 200 確認までの公開証跡を記録。</p>
-    <p class="thread-note">ローカル、GitHub Actions、公開URLを別々の proof surface として扱う。</p>
+    <div class="thread-body">
+      <h4>分けて確認した proof surface</h4>
+      <ul>
+        <li><strong>Local:</strong> <code>npm run check</code> が成功</li>
+        <li><strong>GitHub:</strong> repository visibility が <code>PUBLIC</code></li>
+        <li><strong>Actions:</strong> Pages deploy が成功</li>
+        <li><strong>Published:</strong> 公開URLが <code>HTTP/2 200</code></li>
+      </ul>
+      <h4>公開URL</h4>
+      <p><a href="https://sunwood-ai-labs.github.io/agent-scrapbook/">https://sunwood-ai-labs.github.io/agent-scrapbook/</a></p>
+    </div>
   </section>
 </article>
 
 <article class="thread-report">
-  <div class="thread-dot">04</div>
   <section class="thread-card">
-    <h3><a href="../reports/0104-this-thread-example-expansion.md">0104 Example Expansion</a></h3>
-    <div class="thread-meta">
-      <span class="thread-chip">status: in_progress</span>
-      <span class="thread-chip">parent: 0103</span>
-      <span class="thread-chip">agent: codex</span>
+    <div class="thread-head">
+      <div class="thread-dot">04</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0104-this-thread-example-expansion.md">0104 Example Expansion</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: accepted</span>
+        <span class="thread-chip">parent: 0103</span>
+        <span class="thread-chip">agent: codex</span>
+      </div>
     </div>
-    <p>ユーザーの追加依頼に合わせ、この会話自体をサンプルスレッドとして追加。</p>
-    <p class="thread-note">この段階では、見た目がリンク一覧に寄っていたため、スクリーンショット確認が必要になった。</p>
+    <div class="thread-body">
+      <h4>追加した実例</h4>
+      <ul>
+        <li>この会話自体を <code>this-thread-agent-scrapbook</code> として追加</li>
+        <li><code>0101</code> から <code>0104</code> までを時系列レポート化</li>
+        <li>全文転載ではなく、公開向けの要約として整理</li>
+      </ul>
+      <h4>この時点の弱点</h4>
+      <p>構造はできたが、見た目はまだ「Reports のリンク一覧」に近く、ユーザーが期待したスレッド感には届いていなかった。</p>
+    </div>
   </section>
 </article>
 
 <article class="thread-report">
-  <div class="thread-dot">05</div>
   <section class="thread-card">
-    <h3><a href="../reports/0105-this-thread-screenshot-review.md">0105 Screenshot Review</a></h3>
-    <div class="thread-meta">
-      <span class="thread-chip">status: fixing</span>
-      <span class="thread-chip">parent: 0104</span>
-      <span class="thread-chip">agent: user-and-codex</span>
+    <div class="thread-head">
+      <div class="thread-dot">05</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0105-this-thread-screenshot-review.md">0105 Screenshot Review</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: superseded</span>
+        <span class="thread-chip">parent: 0104</span>
+        <span class="thread-chip">agent: user-and-codex</span>
+      </div>
     </div>
-    <p>ユーザーのスクリーンショット指摘により、ページがスレッド形式ではなく単なるレポートリンク一覧に見える問題を確認。</p>
-    <p class="thread-note">左ライン、丸番号、カード、状態チップを使うタイムライン型UIへ修正。</p>
+    <div class="thread-body">
+      <h4>ユーザーからの指摘</h4>
+      <blockquote>スレッド形式になってなくね？？ ページをスクリーンショットベースで確認した？</blockquote>
+      <h4>確認結果</h4>
+      <p>指摘どおり、前回はスクリーンショット確認をしていなかった。タイムライン風にはしたが、左レーンが横幅を食い、カード内の情報量も少なかった。</p>
+      <figure class="thread-image">
+        <img src="../assets/thread-feedback-narrow-cards.jpg" alt="ユーザーが指摘した、横幅が狭く見えるカードUIのスクリーンショット">
+        <figcaption>ユーザー指摘時の表示。左のライン列が目立ち、カード本文も薄い。</figcaption>
+      </figure>
+    </div>
+  </section>
+</article>
+
+<article class="thread-report">
+  <section class="thread-card">
+    <div class="thread-head">
+      <div class="thread-dot">06</div>
+      <div class="thread-title">
+        <h3><a href="../reports/0106-this-thread-wide-markdown-cards.md">0106 Wide Markdown Cards</a></h3>
+      </div>
+      <div class="thread-meta">
+        <span class="thread-chip">status: fixing</span>
+        <span class="thread-chip">parent: 0105</span>
+        <span class="thread-chip">agent: user-and-codex</span>
+      </div>
+    </div>
+    <div class="thread-body">
+      <h4>今回の修正方針</h4>
+      <ul>
+        <li>カードを横幅いっぱいに使い、左レーンを廃止する。</li>
+        <li>カード同士を短いコネクタで連結し、縦スクロールで読みやすくする。</li>
+        <li>カード内に <code>h4</code>, <code>ul</code>, <code>blockquote</code>, <code>pre/code</code>, <code>img</code> を入れ、Markdown相当の表現を使えるようにする。</li>
+        <li>内容を「要件、判断、検証、弱点、次アクション」まで厚くする。</li>
+      </ul>
+      <h4>検証すること</h4>
+      <pre><code>cards === 6
+links include "0106 Wide Markdown Cards"
+images >= 1
+mobile screenshot looks readable</code></pre>
+    </div>
   </section>
 </article>
 
@@ -98,6 +195,7 @@ title: "This Thread: Agent Scrapbook Launch"
    └─ 0103 publish-proof
       └─ 0104 example-expansion
          └─ 0105 screenshot-review
+            └─ 0106 wide-markdown-cards
 ```
 
 </div>
@@ -109,3 +207,4 @@ title: "This Thread: Agent Scrapbook Launch"
 - 公開可否は、ローカルビルド、GitHub Actions、Pages HTTP 200 を別々に確認した。
 - 今回の追記では、会話内容をそのまま転載せず、公開向けに要約した。
 - スレッドらしさは、HTTP確認だけではなくスクリーンショットで確認する。
+- カード内では Markdown 相当の見出し、リスト、引用、コード、画像を扱えるようにする。
