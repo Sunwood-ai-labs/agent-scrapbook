@@ -1,0 +1,24 @@
+{
+  "name": "agent-scrapbook",
+  "version": "1.0.0",
+  "description": "Append-only agent progress reports published as a VitePress task tree.",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "check": "npm run docs:build"
+  },
+  "keywords": [
+    "agent",
+    "progress-report",
+    "vitepress",
+    "zenn-scrap",
+    "github-pages"
+  ],
+  "author": "Sunwood-ai-labs",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
